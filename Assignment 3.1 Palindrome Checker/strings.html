@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Oswald Font Link -->
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	<!-- CSS File Link -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Webpage Title -->
+	<title>Palindrome Checker</title>
+</head>
+<!-- Page will do startup function and fade the background, then the text prompt -->
+<body onload="startup()">
+	<!-- background image -->
+	<div id="everything"></div>
+	<!-- had to use form tag to get input to work -->
+	<form>
+		<!-- black background of text prompts to better contrast -->
+		<div class="backg" id="bg">
+			<!-- input tag that runs functions everytime something is typed. It will display if the text is a palindrome or not -->
+			<input oninput="checkPalindrome()" type="text" id="pal" placeholder="Enter Text">
+			<!-- palindrome indicator -->
+			<p id="pc" class="pchec">Not a Palindrome</p>
+			<!-- Resets the text in or to type another palindrome, or you can press backspace or enter -->
+			<div onclick="resetText()" class="rst">Reset</div>
+		</div>
+	</form>
+</body>
+<!-- javascript file link -->
+<script type="text/javascript" src="main.js"></script>
+</html>

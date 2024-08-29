@@ -1,0 +1,60 @@
+<!-- Joshua Blatnik -->
+
+<!DOCTYPE html>
+<!-- html tag -->
+<html>
+	<!-- head tag uses for importing -->
+  <head>
+  	<!-- charset declaration -->
+    <meta charset="utf-8">
+    <!-- viewport declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- oswald font importing -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <!-- webpage title -->
+    <title>CS Objectives</title>
+    <!-- CSS FILE LOCATION LINK -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+  </head>
+  <!-- onload function triggers fade effect as soon as body is loaded -->
+  <body onload="fadeInCont()">
+  	<!-- divider used for fade effect -->
+    <div id="everything" style="filter: opacity(0%);">
+    	<!-- header -->
+      <h1>Computer Science Objectives</h1>
+      <!-- computer science objectives made into a list -->
+      <ul>
+        <li>Follow a software development process to analyze a problem and to design, build and test software solutions.</li>
+        <li>Demonstrate software development skills using more than one programming language and development environment.</li>
+        <li>Implement data-driven solutions.</li>
+        <li>Design and implement software solutions for mobile devices, embedded systems and/or multiple platforms.</li>
+        <li>Document the planning and development of software applications using industry-standard tools, techniques and processes.</li>
+        <li>Within software solutions, describe, implement and analyze data structure techniques such as lists, trees, hash tables and graphs, along with sorting and searching algorithms.</li>
+      </ul>
+      <!-- body divider for centering image -->
+      <div class="bodyDiv">
+      	<!-- link to index.html -->
+        <a href="index.html">
+        	<!-- image in paragraph tags -->
+          <p>
+          	<!-- label for image, also works as link button -->
+            <h1 class="hp-lbl">Home Page</h1>
+            <img class="meme" src="edMeme.png">
+          </p>
+        </a>
+      </div>
+      <!-- Particle Effects -->
+      <div id='stars'></div>
+      <div id='stars2'></div>
+      <div id='stars3'></div>
+    </div>
+  </body>
+  <script>
+  	//Fade In Effect
+    function fadeInCont() {
+      document.getElementById("everything").style.animation = "fadeIn 1.5s"
+      document.getElementById("everything").style.filter = "opacity(100%)"
+    }
+  </script>
+</html>

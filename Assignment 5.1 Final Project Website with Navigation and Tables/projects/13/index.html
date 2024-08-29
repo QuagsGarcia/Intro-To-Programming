@@ -1,0 +1,48 @@
+<!-- Joshua Blatnik -->
+
+<!DOCTYPE html>
+<!-- html tag -->
+<html>
+	<!-- head tag uses for importing -->
+  <head>
+  	<!-- charset declaration -->
+    <meta charset="utf-8">
+    <!-- viewport declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- oswald font importing -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <!-- webpage title -->
+    <title>Emotional Damage</title>
+    <!-- CSS FILE LOCATION LINK -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <!-- onload function triggers fade effect as soon as body is loaded -->
+  <body onload="fadeInCont()">
+  	<!-- divider used for fade effect -->
+    <div id="everything" style="filter: opacity(0%);">
+    	<!-- header -->
+      <h1>Emotionally Damaged Page</h1>
+      <!-- body divider for centering image -->
+      <div class="bodyDiv2">
+      	<!-- link to boards.html -->
+        <a href="boards.html">
+        	<!-- image in paragraph tags -->
+          <p>
+            <img class="meme2" src="edMeme.png">
+          </p>
+        </a>
+      </div>
+      <!-- Particle Effects -->
+      <div id='stars'></div>
+      <div id='stars2'></div>
+      <div id='stars3'></div>
+    </div>
+  </body>
+  <script>
+  	//Fade In Effect
+    function fadeInCont() {
+      document.getElementById("everything").style.animation = "fadeIn 1.5s"
+      document.getElementById("everything").style.filter = "opacity(100%)"
+    }
+  </script>
+</html>

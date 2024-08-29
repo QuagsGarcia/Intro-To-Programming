@@ -1,0 +1,142 @@
+/* adding no user select to prevent blue highlighting */
+body {
+	margin: 0;
+	overflow: hidden;
+	user-select: none;
+}
+/* form positioning for all elements inside */
+form {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+
+}
+/* input font changing and border styling, also adding a shadow for better contrast */
+#pal {
+	border-style: double;
+	font-size: 1.25vw;
+	text-align: center;
+	font-family: "Oswald";
+	box-shadow: 0vw 0vw 0.1vw black;
+}
+/* palindrome check indicator styling, default is red because default text is not a palindrome. Also positioning */
+.pchec {
+	position: absolute;
+	font-size: 0.85vw;
+	margin-top: -2.1vw;
+	margin-left: 22.5vw;
+	color: red;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 1.0);
+	padding: 0.25vw 0.5vw;
+	border-style: double;
+	font-family: "Oswald";
+	box-shadow: 0vw 0vw 0.1vw black;
+}
+/* reset button styling, added a hover effect and cursor effect since it is a "button" */
+.rst {
+	position: absolute;
+	font-size: 1vw;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	padding: 0.25vw 0.5vw;
+	border-radius: 0.25vw;
+	top: 3.7vw;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	font-family: "Oswald";
+	box-shadow: 0vw 0vw 0.1vw black;
+}
+/* reset button hover effect */
+.rst:hover {
+	font-size: 1.05vw;
+	cursor: pointer;
+}
+/* black contrast background for text prompt */
+.backg {
+	padding-top: 1vw;
+	width: 32vw;
+	height: 5.5vw;
+	border-radius: 0.2vw;
+	background-color: rgba(0, 0, 0, 0.6);
+	filter: opacity(0%);
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	box-shadow: 0vw 0vw 0.5vw black;
+}
+/* background image, had to use a whole div to add a better fade effect */
+#everything {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url("https://wallpapers.com/images/hd4/black-and-white-futuristic-buildings-p9o13h0w21bypo8g.jpg");
+	background-size: cover;
+	filter: opacity(0%);
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* fading in transition effect */
+@keyframes fadeIn {
+	        0% {
+	          filter: opacity(0%);
+	        }
+
+	        10% {
+	          filter: opacity(0%);
+	        }
+
+	        100% {
+	          filter: opacity(100%);
+	        }
+	    }
+/* fading out transition effect */
+@keyframes fadeOut {
+	        0% {
+	          filter: opacity(100%);
+	        }
+
+	        100% {
+	          filter: opacity(0%);
+	        }
+	    }
+/* verify box div declaration */
+#loginbox {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 50vw;
+	height: 20vw;
+	border-radius: 0.5vw;
+	filter: opacity(0%);
+	box-shadow: 0vw 0vw 0.5vw black;
+}
+/* verified text styling */
+#verified {
+	font-size: 8vw;
+	font-family: "Oswald";
+	filter: opacity(100%);
+	color: rgb(50, 255, 50, 1.0);
+	filter: opacity(0%);
+}
+/* positioning for verify input tags */
+.ipt {
+	font-size: 2vw;
+	font-family: "Oswald";
+	text-align: center;
+	margin-left: 1vw;
+	margin-top: -0.5vw;
+}
+/* submission position adjustment */
+#sub {
+	margin-top: 1vw;
+}
+/* Credential text styling */
+#cred {
+	color: white;
+	font-family: "Oswald";
+	font-size: 4vw;
+	margin-top: -16vw;
+}

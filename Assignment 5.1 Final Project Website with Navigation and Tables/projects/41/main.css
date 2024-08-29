@@ -1,0 +1,88 @@
+/* body styling used hidden overflow to hide scrollbars, set the font family for the whole page, and made it so nothing can be highlighted blue */
+body {
+	margin: 0;
+	overflow: hidden;
+	font-family: "Oswald";
+	background-color: black;
+	user-select: none;
+}
+/* background image styling, added slight tint to make better contrast */
+
+#backG {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url("https://i.imgur.com/k7b7bpr.png");
+	background-size: cover;
+	filter: brightness(0.7);
+}
+/* div that is connected to everything styling */
+#load {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	filter: opacity(0%);
+}
+
+/* peter styling, centered and set him as static as first. Scale is 0% because the animation hasnt started yet */
+
+#peter {
+	width: 0%;
+	height: 0%;
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-image: url("peter.png");
+	background-size: cover;
+}
+
+/* peter running animation */
+
+@keyframes peterAnim {
+  0%   {left: 40%}
+  25%  {left: 55%; width: 70%; height: 70%;}
+  35%  { filter: opacity(100%);}
+  75%  {filter: opacity(0%);}
+  100% {width: 220%; height: 220%; filter: opacity(0%); left: 0%}
+}
+
+/* button styling for start and stop animation button, added transition to make hover effect more appealing */
+
+.btn {
+	position: absolute;
+	font-size: 2vw;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	left: 5%;
+	padding: 0.25vw 0.4vw;
+	border-radius: 0.1vw;
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* hover effect changes size and brightness slightly and also the cursor. This is so you know you are actually hovering over the button */
+
+.btn:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+	transform: scale(0.97);
+	cursor: pointer;
+}
+
+/* start button positioning */
+
+.st {
+	top: 20%;
+}
+
+/* stop button positioning */
+
+.ed {
+	top: 30%;
+}
+
+/* webpage fade in effect */
+
+@keyframes fade {
+  0%   {filter: opacity(0%)}
+  100% {filter: opacity(100%)}
+}

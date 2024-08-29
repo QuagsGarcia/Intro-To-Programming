@@ -1,0 +1,52 @@
+<!-- Joshua Blatnik -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--- linking oswald font to page --->
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	<!-- used to link fonts -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<!--- title tag for naming tab --->
+	<title>Tic Tac Toe</title>
+	<!-- used to link css file -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<!--- On body loaded the page will fade it to stop flickering of background image --->
+<body onload="fadeInCont()">
+	<div id="everything">
+		<!--- winner headline, either displays draw or bot wins --->
+		<h1 class="winner" id="winner"></h1>
+		<!--- Displays whether the player is x or o --->
+		<p id="pb1" class="pbut pb1">Player: (X)</p>
+		<!--- Displays whether the bot is x or o --->
+		<p id="pb2" class="pbut pb2">Bot: (O)</p>
+		<div class="box">
+			<!--- lines that make the tictactoe board --->
+			<div class="line1 ln"></div>
+			<div class="line2 ln"></div>
+			<div class="line3 ln"></div>
+			<div class="line4 ln"></div>
+			<!--- click able squares that trigger a function to place either an x or an o --->
+			<div onclick="select(this)" class="btn b1" id="b1"></div>
+			<div onclick="select(this)" class="btn b2" id="b2"></div>
+			<div onclick="select(this)" class="btn b3" id="b3"></div>
+			<div onclick="select(this)" class="btn b4" id="b4"></div>
+			<div onclick="select(this)" class="btn b5" id="b5"></div>
+			<div onclick="select(this)" class="btn b6" id="b6"></div>
+			<div onclick="select(this)" class="btn b7" id="b7"></div>
+			<div onclick="select(this)" class="btn b8" id="b8"></div>
+			<div onclick="select(this)" class="btn b9" id="b9"></div>
+		</div>
+		<!--- Clear board and select x as the player --->
+		<div onclick="choose('X')" class="selection slt1">X</div>
+		<!--- Clear board and select y as the player --->
+		<div onclick="choose('O')" class="selection slt2">O</div>
+		<!-- volume slider and mute/unmute area -->
+		<div class="volumeStuff"><i id="volumeStatus" class="fa-solid fa-volume-high" data-volStatus="on" onclick="changeMuteStatus()"></i> <input type="range" min="1" max="100" value="35" id="vol" class="slider"></div>
+	</div>
+</body>
+<!--- tag to link javascript file --->
+<script type="text/javascript" src="fn.js"></script>
+</html>

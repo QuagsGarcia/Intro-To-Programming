@@ -1,0 +1,309 @@
+/* remove side to side scroll because its annoying and the only font I will be using is oswald so thats why i just put it for the whole body */
+body {
+	margin: 0;
+	font-family: "Oswald";
+	overflow-x: hidden;
+	user-select: none;
+}
+/* changes the whole scrollbar width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3); 
+}
+ 
+/* changes the inner scrollbar */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0, 0.7); 
+  border-radius: 0.1vw;
+}
+
+/* inner scrollbar on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 0, 0, 0.9); 
+}
+/* header styling, made it fixed so it doesnt move when scrolling */
+#header {
+	position: fixed;
+	background-color: rgba(25,25,25, 1);
+	left: 0vw;
+	top: 0vw;
+	width: 60%;
+	font-size: 2vw;
+	padding: 0vw 2vw;
+	border-radius: 0vw 0vw 3vw 0vw;
+	border-spacing: 1vw;
+}
+/* used transition for hover effect */
+th {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 0.1vw;
+	color: white;
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+th:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.1);
+	font-size: 1.98vw;
+}
+/* content area styling added background image so it doesnt look bland */
+#content {
+	margin-top: 0vw;
+	padding-top: 5.5vw;
+	width: 100%;
+	background-image: url("https://images.unsplash.com/photo-1520531158340-44015069e78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2hpdGUlMjBjaXR5fGVufDB8fDB8fHww&w=1000&q=80");
+	background-size: cover;
+	padding-bottom: 1vw;
+}
+/* footer styling */
+#footer {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 1vw;
+	font-size: 1vw;
+}
+/* used to remove ugly blue and underline effect */
+a {
+	text-decoration: none;
+}
+/* used to only add underline when hovered also changes the underline color from ugly blue to nice white */
+a:hover {
+	text-decoration: underline;
+  	text-decoration-color: white;
+}
+/* overall uat address positioning */
+#uat {
+	color: white;
+	width: 15vw;
+	margin-left: 10vw;
+}
+/* micro uat positioning */
+.uat1 {
+	color: white;
+}
+.uat2 {
+		margin-top: -0.5vw;
+		color: white;
+}
+.uat3 {
+		margin-top: -0.5vw;
+		color: white;
+}
+.icon {
+	width: 1.2vw;
+}
+/* overall contact positioning */
+#contact {
+	margin-left: 45vw;
+	color: white;
+	width: 10vw;
+	margin-top: -6.4vw;
+}
+/* micro contact positioning */
+.contact2 {
+		margin-top: -0.6vw;
+}
+.contact3 {
+		margin-top: -0.6vw;
+}
+/* overall portfolio positioning */
+#work {
+	margin-left: 80vw;
+	color: white;
+	width: 10vw;
+	margin-top: -6.4vw;
+}
+/* micro portfolio positioning */
+.work1 {
+	color: white;
+}
+.work2 {
+	color: white;
+		margin-top: -0.6vw;
+}
+.work3 {
+	color: white;
+		margin-top: -0.6vw;
+}
+/* main iframe styling for header buttons */
+#mainframe {
+	width: 100vw;
+	height: 100vh;
+	border: 0.1vw rgba(0, 0, 0, 0.0); solid;
+}
+/* divider styling for projects */
+.pro-div {
+	position: absolute;
+	top: 0.5vw;
+	right: 1vw;
+	color: white;
+	font-size: 1vw;
+}
+/* project button styling */
+.pro-btn {
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 0.25vw 0.5vw;
+	margin-top: 0.2vw;
+	border-radius: 0.3vw;
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* project button hover effect */
+.pro-btn:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+	transform: scale(1.01);
+}
+/* project iframe positiong and transition effect with border */
+.pro-iframe {
+	position: absolute;
+	left: 1vw;
+	top: 2vw;
+	width: 70vw;
+	height: 39.375vw;
+	border: 0.15vw white solid;
+	background-color: black;
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* project iframe hover effect */
+.pro-iframe:hover {
+	transform: scale(1.01);
+}
+/* source code styling */
+.ProSource {
+	background-color: rgba(0, 0, 0, 0.9);
+	font-size: 1.5vw;
+	color: white;
+	padding: 0.5vw;
+	position: absolute;
+	bottom: 1.5vw;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* source code styling hover effect */
+.ProSource:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	font-size: 1.55vw;
+}
+/* main homepage declaration setup */
+.mainhomepagearea {
+	position: absolute;
+	top: 0vw;
+	color: white;
+	font-size: 2vw;
+	height: 100vh;
+	width: 100vw;
+}
+/* main tag for spacing */
+.m {
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 0.25vw 0.5vw;
+	border-radius: 0.25vw;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* text 1-4 positioning */
+.main-1 {
+	position: absolute;
+	top: 15%;
+	width: 70vw;
+	left: 5vw;
+}
+.main-2 {
+	position: absolute;
+	top: 30%;
+	width: 70vw;
+	left: 10vw;
+}
+.main-3 {
+	position: absolute;
+	top: 45%;
+	width: 70vw;
+	left: 15vw;
+}
+.main-4 {
+	position: absolute;
+	top: 60%;
+	width: 70vw;
+	left: 20vw;
+}
+.m:hover {
+	font-size: 1.99vw;
+	box-shadow: 0vw 0vw 1vw black;
+}
+/* used for about me, sets general styling then individual tags for positioning */
+h1 {
+        background-color: rgba(0, 0, 0, 0.85);
+        position: absolute;
+        font-size: 3vw;
+        color: white;
+        padding: 0.5vw 1vw;
+        border-radius: 0.5vw 0vw;
+        left: 1vw;
+        transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0vw 0vw 0.3vw black;
+      }
+      /* hover effects for headers */
+      h1:hover {
+        font-size: 3.05vw;
+        box-shadow: 0vw 0vw 0.5vw white;
+      }
+      /* list styling */
+      ul {
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        font-size: 1.5vw;
+        color: white;
+        padding: 0.5vw 2.5vw;
+        border-radius: 0.5vw 0vw;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 50vw;
+        transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0vw 0vw 0.3vw black;
+      }
+      /* list hover effect */
+      ul:hover {
+        box-shadow: 0vw 0vw 0.5vw white;
+        transform: translate(-50%, -50%) scale(1.01);
+      }
+      /* load style set to none to prevent flickering */
+      #load {
+      	display: none;
+      }
+      .song-list {
+      	left: 13%;
+      	top: 123%;
+      }
+      .hobby-label {
+      	left: 40%;
+      	top: 22%;
+      }
+      .job-list {
+      	left: 78%;
+      	top: 72%;
+      }
+      .job-label {
+      	left: 65%;
+      	top: 44%;
+      }
+      .xp-label {
+      	left: 40%;
+      	top: 95%;
+      }
+      .xp-list {
+      	top: 130%;
+      	left: 57%;
+      }
+      .ff-label {
+      	left: 40%;
+      	top: 160%;
+      }
+      .ff-list {
+      	top: 189%;
+      	left: 60%;
+      }
+      /* all of these were positioning */

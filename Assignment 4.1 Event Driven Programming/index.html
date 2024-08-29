@@ -1,0 +1,30 @@
+<!-- Joshua Blatnik -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- webpage title -->
+	<title>Peter's Escape</title>
+	<!-- used to link oswald font -->
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	<!-- use to link css file -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<!-- used to link javascript file -->
+	<script type="text/javascript" src="fn.js"></script>
+</head>
+<!-- triggers fade in effect when document is loaded -->
+<body onload="load()">
+	<!-- divider for all elements so everything smooths in nicely, has to be an element or it wont work -->
+	<div id="load">
+		<!-- Quahog background that peter is running from -->
+		<div id="backG"></div>
+		<!-- peter div used for running animation and changing from static to dynamic movement -->
+		<div id="peter"></div>
+		<!-- start animation button triggers start function when clicked -->
+		<div onclick="start()" class="btn st">Start Animation</div>
+		<!-- stop/pause animation button triggers stop function when clicked -->
+		<div onclick="stop()" class="btn ed">Stop Animation</div>
+	</div>
+</body>
+</html>

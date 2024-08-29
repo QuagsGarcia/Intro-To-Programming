@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Oswald Font Link -->
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	<!-- CSS File Link -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Font Awesome Icons Link -->
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+	<!-- Webpage Title -->
+	<title>Palindrome Checker</title>
+</head>
+<body onload="fullLoad()">
+		<!-- background image -->
+		<div id="everything"></div>
+		<!-- had to use form tag to get input to work -->
+		<form>
+			<!-- black background of text prompts to better contrast -->
+			<div class="backg" id="bg">
+				<!-- input tag that runs functions everytime something is typed. It will display if the text is a palindrome or not -->
+				<input oninput="checkPalindrome()" type="text" id="pal" placeholder="Enter Text">
+				<!-- palindrome indicator -->
+				<p id="pc" class="pchec">Not a Palindrome</p>
+				<!-- Resets the text in or to type another palindrome, or you can press backspace or enter -->
+				<div onclick="resetText()" class="rst">Reset</div>
+			</div>
+		</form>
+		<form>
+			<!-- black background of verification prompts to better contrast -->
+			<div id="loginbox">
+				<!-- verified text -->
+				<span id="verified"><i class="fa-light fa-square-check"></i> Verified</span>
+				<!-- inputs for verification. Max length only allows 20 characters to be typed and a js check will see if anything is typed -->
+				<div id="inputs">
+					<input class="ipt" type="text" id="first" maxlength="20" minlength="1" placeholder="First Name" required>
+					<input class="ipt" type="text" id="last" maxlength="20" minlength="1" placeholder="Last Name" required>
+					<input class="ipt" type="number" id="zip" max="99999" min="10000" placeholder="Zip" required>
+					<input class="ipt" type="button" id="sub" value="Verify" onclick="subm()">
+				</div>
+				<!-- creditionals warning/label -->
+				<div id="cred">Verify Credentials</div>
+			</div>
+		</form>
+</body>
+<!-- javascript file link -->
+<script type="text/javascript" src="main.js"></script>
+</html>

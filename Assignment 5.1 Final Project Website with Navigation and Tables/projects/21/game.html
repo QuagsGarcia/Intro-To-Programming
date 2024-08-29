@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--- linking oswald font to page --->
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	<!--- title tag for naming tab --->
+	<title>Tic Tac Toe</title>
+	<style>
+		/* setting background to black to reduce flickering along with no user select so when a button is clicked, there is nothing that accidentally gets highlighted */
+		body {
+			margin: 0;
+			user-select: none;
+			background-color: black;
+		}
+		/* setting the position of the tictactoe board in the center of the page */
+		.box {
+			position: absolute;
+			width: 30vw;
+			height: 30vw;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+		/* setting line position and color for tictactoe board  */
+		.ln {
+			width: 30vw;
+			height: 0.3vw;
+			border-radius: 0.1vw;
+			background-color: black;
+		}
+		/* line positioning */
+		.line1 {
+			margin-top: 33%;
+		}
+		.line2 {
+			margin-top: 33%;
+		}
+		.line3 {
+			transform: rotate(90deg);
+			margin-left: 17%;
+			margin-top: -18.5%;
+		}
+		.line4 {
+			transform: rotate(90deg);
+			margin-left: -17%;
+			margin-top: -1%;
+		}
+		/* button styling for when there is text in the box and adding a transition whenever it gets hovered on */
+		.btn {
+			width: 9.5vw;
+			height: 9.5vw;
+			border-radius: 0.1vw;
+			font-size: 8vw;
+			text-align: center;
+			transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+		/* tictactoe board button positioning */
+		.b1 {
+			margin-top: -50%;
+		}
+		.b2 {
+			margin-top: 2.3%
+		}
+		.b3 {
+			margin-top: 2.3%
+		}
+		.b4 {
+			margin-left: 34%;
+			margin-top: -99.5%;
+		}
+		.b5 {
+			margin-left: 34%;
+			margin-top: 2.3%;
+		}
+		.b6 {
+			margin-left: 34%;
+			margin-top: 2.3%;
+		}
+		.b7 {
+			margin-left: 67.8%;
+			margin-top: -99.5%
+		}
+		.b8 {
+			margin-left: 67.8%;
+			margin-top: 2.2%
+		}
+		.b9 {
+			margin-left: 67.8%;
+			margin-top: 2.2%
+		}
+		/* hover effect for tictactoe square */
+		.btn:hover {
+			background-color: rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+		}
+		/* button styling for selecting whether you want to be x or o. also a transition for when it is hovered */
+		.selection {
+			position: absolute;
+			right: 4.5vw;
+			font-size: 3vw;
+			width: 5vw;
+			background-color: rgba(0, 0, 0, 0.9);
+			border-radius: 0.5vw;
+			text-align: center;
+			color: white;
+			font-family: "Oswald";
+			transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+		/* x button positioning */
+		.slt1 {
+			top: 40%;
+		}
+		/* o button positioning */
+		.slt2 {
+			top: 50%;
+		}
+		/* x and o button hover effect */
+		.selection:hover {
+			background-color: rgba(0, 0, 0, 0.84);
+			transform: scale(0.97);
+		}
+		/* winner text centering and font size/family */
+		.winner {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 0vw;
+			font-size: 4vw;
+			font-family: "Oswald";
+		}
+		/* fading in animation when page loads */
+		@keyframes fadeIn {
+	        0% {
+	          filter: opacity(0%);
+	        }
+
+	        10% {
+	          filter: opacity(0%);
+	        }
+
+	        100% {
+	          filter: opacity(100%);
+	        }
+	    }
+	    /* used for fading in and background effect. This also reduces background image flickering as it only fades in when everything is loaded */
+		#everything {
+			position: absolute;
+			left: 0vw;
+			top: 0vw;
+			width: 100vw;
+			height: 100vh;
+			filter: opacity(0%);
+			background-image: url("https://wallpapers.com/images/hd/white-abstract-hexagons-wshg1akmqzklnrmo.jpg");
+			background-size: cover;
+		}
+		/* x/o indicator for player and bots */
+		.pbut {
+			position: absolute;
+			left: 4.5vw;
+			font-size: 2vw;
+			background-color: rgba(0, 0, 0, 0.9);
+			border-radius: 0.5vw;
+			text-align: center;
+			color: white;
+			font-family: "Oswald";
+			padding: 0.2vw 0.7vw;
+		}
+		/* bot indicator for player and bots positioning*/
+		.pb2 {
+			bottom: 4vw;
+		}
+		/* player indicator for player and bots positioning*/
+		.pb1 {
+			bottom: 0vw;
+		}
+	</style>
+</head>
+<!--- On body loaded the page will fade it to stop flickering of background image --->
+<body onload="fadeInCont()">
+	<div id="everything">
+		<!--- winner headline, either displays draw or bot wins --->
+		<h1 class="winner" id="winner"></h1>
+		<!--- Displays whether the player is x or o --->
+		<p id="pb1" class="pbut pb1">Player: (X)</p>
+		<!--- Displays whether the bot is x or o --->
+		<p id="pb2" class="pbut pb2">Bot: (O)</p>
+		<div class="box">
+			<!--- lines that make the tictactoe board --->
+			<div class="line1 ln"></div>
+			<div class="line2 ln"></div>
+			<div class="line3 ln"></div>
+			<div class="line4 ln"></div>
+			<!--- click able squares that trigger a function to place either an x or an o --->
+			<div onclick="select(this)" class="btn b1"></div>
+			<div onclick="select(this)" class="btn b2"></div>
+			<div onclick="select(this)" class="btn b3"></div>
+			<div onclick="select(this)" class="btn b4"></div>
+			<div onclick="select(this)" class="btn b5"></div>
+			<div onclick="select(this)" class="btn b6"></div>
+			<div onclick="select(this)" class="btn b7"></div>
+			<div onclick="select(this)" class="btn b8"></div>
+			<div onclick="select(this)" class="btn b9"></div>
+		</div>
+		<!--- Clear board and select x as the player --->
+		<div onclick="choose('X')" class="selection slt1">X</div>
+		<!--- Clear board and select y as the player --->
+		<div onclick="choose('O')" class="selection slt2">O</div>
+	</div>
+</body>
+<!--- tag to link javascript file --->
+<script type="text/javascript" src="fn.js"></script>
+</html>
